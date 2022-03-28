@@ -1,0 +1,39 @@
+{
+	"name": "@yme/shared",
+	"description": "shared utils",
+	"version": "0.1.0",
+	"author": "mino",
+	"license": "MIT",
+	"repository": "minosss/shared",
+	"files": [
+		"dist"
+	],
+	"exports": "./dist/index.js",
+	"types": "dist",
+	"scripts": {
+		"lint-staged": "lint-staged",
+		"prepare": "husky install",
+		"tsc": "tsc",
+		"lint": "eslint src/**/*.ts"
+	},
+	"devDependencies": {
+		"@yme/eslint-config-prettier": "^0.5.2",
+		"@yme/tsconfig": "^0.1.2",
+		"eslint": "^8.10.0",
+		"husky": "^7.0.4",
+		"lint-staged": "^12.3.7",
+		"prettier": "^2.5.1",
+		"typescript": "^4.6.3"
+	},
+	"engines": {
+		"node": ">=14"
+	},
+	"lint-staged": {
+		"{src,test}/**/*.{js,ts}": [
+			"eslint --fix"
+		]
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
