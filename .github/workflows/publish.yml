@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Build
+        run: pnpm build
+
       - name: Create Release
         run: npx conventional-github-releaser -p angular
         continue-on-error: true
