@@ -1,4 +1,4 @@
-import {isString} from '../../src/utils/is';
+import {isString} from '../../src';
 
 test('isString', () => {
 	expect(isString('is')).toBe(true);
