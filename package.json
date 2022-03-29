@@ -4,6 +4,7 @@
 	"version": "0.2.0",
 	"author": "mino",
 	"license": "MIT",
+	"type": "module",
 	"repository": "minosss/shared",
 	"files": [
 		"dist"
