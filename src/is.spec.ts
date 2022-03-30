@@ -1,4 +1,4 @@
-import {isString} from '../src';
+import {isString} from './is';
 
 describe('is', () => {
 	it('isString', () => {
