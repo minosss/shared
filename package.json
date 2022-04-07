@@ -9,8 +9,9 @@
 	"files": [
 		"dist"
 	],
+	"main": "./dist/index.js",
 	"exports": "./dist/index.js",
-	"types": "dist",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"lint-staged": "lint-staged",
 		"prepare": "husky install",
