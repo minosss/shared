@@ -65,7 +65,7 @@ export function isFunction(value: any) {
 }
 
 export function isPromise<T = void>(value: any): value is Promise<T> {
-	return isObject(value) && isFunction(value.then);
+	return toString.call(value) === '[object Promise]' && isFunction(value.then);
 }
 
 export function isSet<T = any>(value: any): value is Set<T> {
