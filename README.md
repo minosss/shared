@@ -6,3 +6,13 @@
 </p>
 
 **Warning**: This package is native [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
+
+Install
+
+```sh
+#npm
+npm add @yme/shared
+
+#pnpm
+pnpm add @yme/shared@latest
+```
