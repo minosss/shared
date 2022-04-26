@@ -11,7 +11,7 @@ Install
 
 ```sh
 #npm
-npm add @yme/shared
+npm add @yme/shared@latest
 
 #pnpm
 pnpm add @yme/shared@latest
