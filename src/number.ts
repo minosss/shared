@@ -1,7 +1,3 @@
-export function sleep(time = 3000) {
-	return new Promise<void>((r) => setTimeout(r, time));
-}
-
 /**
  * 限制数字范围
  */

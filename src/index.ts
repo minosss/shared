@@ -1,5 +1,6 @@
 export * from './counter.js';
-export * from './helper.js';
+export * from './number.js';
+export * from './function.js';
 export * from './is.js';
 export * from './uuid.js';
 export * from './array.js';

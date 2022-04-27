@@ -1,6 +1,6 @@
-import {clamp} from './helper';
+import {clamp} from './number';
 
-describe('helper', () => {
+describe('number', () => {
 	it('clamp', () => {
 		expect(clamp(2)).toEqual(1);
 		expect(clamp(-2)).toEqual(0);

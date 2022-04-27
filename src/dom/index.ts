@@ -13,3 +13,9 @@ export function cx(...classes: any[]): string {
 		.filter(Boolean)
 		.join(' ');
 }
+
+export function canUseDom() {
+	return !!globalThis.window?.document?.createElement;
+}
+
+export const isBrowser = canUseDom();

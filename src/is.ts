@@ -93,7 +93,3 @@ export function isEmpty(value: any) {
 		isEmptyMap(value)
 	);
 }
-
-export function isBrowser(): boolean {
-	return isFunction(globalThis.window?.document?.createElement);
-}
