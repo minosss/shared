@@ -3,7 +3,6 @@ import {
 	isBoolean,
 	isBooleanLike,
 	isBooleanString,
-	isBrowser,
 	isEmptyArray,
 	isEmptyMap,
 	isEmptyObject,
@@ -120,9 +119,5 @@ describe('is', () => {
 		expect(isMap(new Map())).toBe(true);
 		expect(isEmptyMap(new Map())).toBe(true);
 		expect(isEmptySet(new Map([[0, 0]]))).toBe(false);
-	});
-
-	it('isBrowser', () => {
-		expect(isBrowser()).toBe(false);
 	});
 });
