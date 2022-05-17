@@ -1,4 +1,4 @@
-import {isObject} from '../is';
+import {isObject} from '../is.js';
 
 function cxIf(classobj: any): string {
 	return Object.entries(classobj)

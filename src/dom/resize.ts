@@ -1,4 +1,4 @@
-import {isString} from '../is';
+import {isString} from '../is.js';
 
 interface Rect {
 	x: number;

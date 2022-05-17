@@ -1,4 +1,4 @@
-import {isString} from './is';
+import {isString} from './is.js';
 
 export function get(object: any, path: string | number, fallback?: any) {
 	const keys = isString(path) ? path.split('.') : [path];
