@@ -1,4 +1,4 @@
-import {clamp} from './number';
+import {clamp} from './number.js';
 
 describe('number', () => {
 	it('clamp', () => {

@@ -1,4 +1,4 @@
-import {uuid} from './uuid';
+import {uuid} from './uuid.js';
 
 describe('uuid', () => {
 	it('random 1 million should be unique', () => {

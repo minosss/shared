@@ -1,4 +1,4 @@
-import {chunk, range} from './array';
+import {chunk, range} from './array.js';
 
 describe('array', () => {
 	it('chunk', () => {

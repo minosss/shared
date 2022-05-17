@@ -1,4 +1,4 @@
-import {getInternal, setInternal} from './internal';
+import {getInternal, setInternal} from './internal.js';
 
 describe('internal', () => {
 	it('internal', () => {

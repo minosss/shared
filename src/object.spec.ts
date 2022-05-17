@@ -1,4 +1,4 @@
-import {get} from './object';
+import {get} from './object.js';
 
 describe('object', () => {
 	it('get', () => {
