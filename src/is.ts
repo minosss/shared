@@ -60,7 +60,8 @@ export function isDefined(value: any) {
 	return !isUndefined(value);
 }
 
-export function isFunction(value: any) {
+// eslint-disable-next-line @typescript-eslint/ban-types
+export function isFunction<T extends Function = Function>(value: any): value is T {
 	return toString.call(value) === '[object Function]';
 }
 
