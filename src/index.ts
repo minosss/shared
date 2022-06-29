@@ -8,4 +8,5 @@ export * from './internal.js';
 export {observe as observeKeyboard} from './dom/key-press.js';
 export {observe as observeResize} from './dom/resize.js';
 export {observe as observeViewport} from './dom/viewport.js';
+export {observe as observeElement} from './dom/element.js';
 export * from './dom/index.js';
