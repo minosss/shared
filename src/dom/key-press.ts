@@ -7,6 +7,25 @@ interface Options {
 
 type unobserve = () => void;
 
+/**
+ * observe keyboard pressed event
+ *
+ * @param keyCode key or code of the keyboard event, default is e.key
+ * @param callback
+ * @param options custom key or code, and target element, default: document
+ * @returns unobserve function
+ *
+ * @example
+ * // listen keyboard press `Ctrl+g`
+ * observe('Ctrl+g', (pressed) => {
+ *   console.log(pressed ? 'on' : 'off);
+ * })
+ *
+ * // listen multiple keys at once
+ * observe(['g', 'j'], (pressed) => {
+ * 	 console.log(pressed ? 'g or j pressed' : 'not pressed');
+ * })
+ */
 export function observe(
 	keyCode: string | string[],
 	callback: (value: boolean) => void,
