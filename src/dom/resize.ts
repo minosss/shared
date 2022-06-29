@@ -9,7 +9,7 @@ interface Rect {
 
 type unobserve = () => void;
 
-interface Options {
+interface Options extends ResizeObserverOptions {
 	immediate?: boolean;
 }
 
@@ -21,33 +21,38 @@ export function observe(
 	callback: (rect: Rect) => void,
 	options?: Options
 ): unobserve {
-	const {immediate = true} = options || {};
+	const {
+		//
+		immediate = true,
+		...otherOptions
+	} = options || {};
 
 	const element = isString(target) ? document.querySelector<HTMLElement>(target) : target;
+
+	if (!element) {
+		throw new Error(`element not found, ${target}`);
+	}
+
 	const onResize = () => {
-		if (element) {
-			callback({
-				x: element.offsetLeft,
-				y: element.offsetTop,
-				width: element.offsetWidth,
-				height: element.offsetHeight,
-			});
-		}
+		callback({
+			x: element.offsetLeft,
+			y: element.offsetTop,
+			width: element.offsetWidth,
+			height: element.offsetHeight,
+		});
 	};
 
-	let resizeObserver: ResizeObserver;
-	if (element) {
-		resizeObserver = new ResizeObserver(onResize);
-		resizeObserver.observe(element);
-	}
+	const resizeObserver = new ResizeObserver(onResize);
+
+	resizeObserver.observe(element, {
+		...otherOptions,
+	});
 
 	if (immediate) {
 		onResize();
 	}
 
 	return () => {
-		if (resizeObserver && element) {
-			resizeObserver.unobserve(element);
-		}
+		resizeObserver.disconnect();
 	};
 }
