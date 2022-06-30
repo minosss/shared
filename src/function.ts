@@ -1,4 +1,4 @@
-import {isFunction} from './is';
+import {isFunction} from './is.js';
 
 export const noop = () => {};
 
