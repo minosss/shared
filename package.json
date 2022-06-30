@@ -1,7 +1,7 @@
 {
 	"name": "@yme/shared",
 	"description": "shared utils",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"author": "mino",
 	"license": "MIT",
 	"type": "module",
