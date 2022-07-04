@@ -1,31 +1,25 @@
 import {isString} from '../is.js';
+import type {Rect} from '../types.js';
 
-interface Rect {
-	x: number;
-	y: number;
-	width: number;
-	height: number;
-}
-
-type unobserve = () => void;
-
-interface Options extends ResizeObserverOptions {
+export interface ResizeOptions extends ResizeObserverOptions {
 	immediate?: boolean;
 }
 
 /**
  * 观察目标元素尺寸变化, 使用 `ResizeObserver`
+ *
+ * @see http://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver
  */
 export function observe(
 	target: string | HTMLElement,
 	callback: (rect: Rect) => void,
-	options?: Options
-): unobserve {
+	options: ResizeOptions = {}
+) {
 	const {
 		//
 		immediate = true,
 		...otherOptions
-	} = options || {};
+	} = options;
 
 	const element = isString(target) ? document.querySelector<HTMLElement>(target) : target;
 

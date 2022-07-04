@@ -1,11 +1,9 @@
 import {isArray} from '../is.js';
 
-interface Options {
+export interface KeyboardOptions {
 	target?: Window | Document | HTMLElement;
 	KeyOrCode?: 'key' | 'code';
 }
-
-type unobserve = () => void;
 
 /**
  * observe keyboard pressed event
@@ -29,13 +27,13 @@ type unobserve = () => void;
 export function observe(
 	keyCode: string | string[],
 	callback: (value: boolean) => void,
-	options?: Options
-): unobserve {
+	options: KeyboardOptions = {}
+) {
 	const {
 		//
 		target = globalThis.document,
 		KeyOrCode = 'key',
-	} = options || {};
+	} = options;
 
 	const pressed = new Set<string>([]);
 	const keyCodes = (isArray(keyCode) ? keyCode : [keyCode])

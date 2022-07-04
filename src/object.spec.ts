@@ -1,4 +1,4 @@
-import {get} from './object.js';
+import {get, omit, pick} from './object.js';
 
 describe('object', () => {
 	it('get', () => {
@@ -9,5 +9,17 @@ describe('object', () => {
 		expect(get(a, 'arr.2')).toEqual(3);
 		expect(get(a, 'foo.bar.baz', 'fall')).toEqual('fall');
 		expect(get(a, 'foo.bar.baz')).toEqual(undefined);
+	});
+
+	it('omit', () => {
+		const obj = {a: 1, b: 2, c: 3};
+
+		expect(omit(obj, ['a', 'b'])).toHaveProperty('c', 3);
+	});
+
+	it('pick', () => {
+		const obj = {a: 1, b: 2, c: 3};
+
+		expect(pick(obj, ['a'])).toHaveProperty('a', 1);
 	});
 });

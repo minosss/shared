@@ -1,24 +1,24 @@
 import {isString} from '../is.js';
 
-interface Options extends MutationObserverInit {}
-
-type unobserve = () => void;
+export interface MutationOptions extends MutationObserverInit {}
 
 /**
- * 观察 DOM 有没有更新
+ * watch for changes being made to the DOM tree.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
  */
 export function observe(
 	target: string | HTMLElement,
 	callback: MutationCallback,
-	options?: Options
-): unobserve {
+	options: MutationOptions = {}
+) {
 	const {
 		//
 		childList = true,
 		subtree = true,
 		attributes = false,
 		...otherOptions
-	} = options || {};
+	} = options;
 
 	const element = isString(target) ? document.querySelector<HTMLElement>(target) : target;
 
