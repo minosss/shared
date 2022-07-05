@@ -25,11 +25,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - run: pnpx changelogithub
+      - run: npx changelogithub
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - run: pnpm run publish:ci
+      - run: npm run publish:ci
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

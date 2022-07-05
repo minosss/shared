@@ -11,7 +11,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "rm -rf dist && tsc"
+		"build": "tsc"
 	},
 	"dependencies": {
 		"@yme/shared": "workspace:*"

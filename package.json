@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"prepare": "husky install",
+		"prebuild": "node scripts/clean.js",
 		"build": "pnpm --filter=@yme/* run build",
 		"release": "node scripts/release.js",
 		"publish:ci": "node scripts/publish.js",
