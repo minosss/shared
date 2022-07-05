@@ -1,50 +1,30 @@
 {
-	"name": "@yme/shared",
-	"description": "shared utils",
-	"version": "0.3.3",
-	"author": "mino",
-	"license": "MIT",
 	"type": "module",
-	"repository": "minosss/shared",
-	"files": [
-		"dist"
-	],
-	"exports": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"private": true,
 	"scripts": {
-		"lint-staged": "lint-staged",
 		"prepare": "husky install",
-		"test": "jest",
-		"build": "tsc",
-		"lint": "eslint src/**/*.ts"
+		"build": "pnpm --filter=@yme/* run build",
+		"publish:ci": "node scripts/publish.js",
+		"test": "NODE_OPTIONS=--experimental-vm-modules jest"
 	},
 	"devDependencies": {
-		"@types/jest": "^28.1.3",
+		"@types/jest": "^28.1.4",
 		"@types/node": "^18.0.0",
-		"@yme/eslint-config-prettier": "^0.6.3",
-		"@yme/tsconfig": "^0.1.3",
+		"@yme/eslint-config-prettier": "^0.7.0",
 		"eslint": "^8.18.0",
 		"husky": "^8.0.1",
 		"jest": "^28.1.2",
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
-		"ts-jest": "^28.0.5",
-		"ts-node": "^10.8.1",
 		"typescript": "^4.7.4"
 	},
-	"engines": {
-		"node": "^14.14.0 || >=16.0.0"
-	},
 	"lint-staged": {
-		"*.{cjs,js,ts}": [
+		"*.{cjs,js,ts,json}": [
 			"eslint --fix"
-		],
-		"*.{json}": [
-			"prettier --write"
 		]
 	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"sideEffects": false
+	"engines": {
+		"node": "^14.14.0 || >= 16.0.0",
+		"pnpm": "^7"
+	}
 }
