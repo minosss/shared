@@ -1,9 +1,11 @@
 {
+	"version": "0.3.4",
 	"type": "module",
 	"private": true,
 	"scripts": {
 		"prepare": "husky install",
 		"build": "pnpm --filter=@yme/* run build",
+		"release": "node scripts/release.js",
 		"publish:ci": "node scripts/publish.js",
 		"test": "NODE_OPTIONS=--experimental-vm-modules jest"
 	},
