@@ -2,6 +2,11 @@ import {readFile, writeFile} from 'node:fs/promises';
 import {join} from 'node:path';
 import {execSync} from 'node:child_process';
 
+function isClean() {
+	const r = execSync('git status -s', {encoding: 'utf8'});
+	return r.length === 0;
+}
+
 async function readJson(path) {
 	const raw = await readFile(path, {encoding: 'utf8'});
 	return JSON.parse(raw);
@@ -12,6 +17,10 @@ async function writeJson(path, data) {
 }
 
 async function run() {
+	if (!isClean()) {
+		throw new Error(`git workspace is not clean, commit the changes or make stash`);
+	}
+
 	const pkg = await readJson('package.json');
 	const {version} = pkg;
 
