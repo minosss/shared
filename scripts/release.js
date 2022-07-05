@@ -13,7 +13,7 @@ async function readJson(path) {
 }
 
 async function writeJson(path, data) {
-	writeFile(path, JSON.stringify(data, null), {encoding: 'utf8'});
+	await writeFile(path, JSON.stringify(data, null), {encoding: 'utf8'});
 }
 
 async function run() {
