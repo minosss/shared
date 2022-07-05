@@ -8,12 +8,13 @@
 		"build": "pnpm --filter=@yme/* run build",
 		"release": "node scripts/release.js",
 		"publish:ci": "node scripts/publish.js",
-		"test": "NODE_OPTIONS=--experimental-vm-modules jest"
+		"test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
 	},
 	"devDependencies": {
 		"@types/jest": "^28.1.4",
 		"@types/node": "^18.0.0",
 		"@yme/eslint-config-prettier": "^0.7.0",
+		"cross-env": "^7.0.3",
 		"eslint": "^8.18.0",
 		"husky": "^8.0.1",
 		"jest": "^28.1.2",
