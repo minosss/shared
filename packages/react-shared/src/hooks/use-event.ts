@@ -1,6 +1,6 @@
-import {isString, observeKeyboard, runIfFn} from '@yme/shared';
+import {isString, runIfFn} from '@yme/shared';
 import type {Fn} from '@yme/shared';
-import {useEffect, useRef} from 'react';
+import {useEffect} from 'react';
 import {useCallbackRef} from './use-callback-ref.js';
 
 export type EventOptions = boolean | AddEventListenerOptions;
@@ -55,33 +55,5 @@ export function useEvent(...args: any[]) {
 	return () => {
 		const el = runIfFn(target) ?? globalThis.window;
 		el?.removeEventListener(event, handler, options);
-	};
-}
-
-export function useKeyboard(
-	keyOrCode: string | string[],
-	callback?: (pressed: boolean) => void
-) {
-	const handler = useCallbackRef(callback);
-	const unobserveRef = useRef<Fn>();
-
-	useEffect(() => {
-		unobserveRef.current = observeKeyboard(
-			keyOrCode,
-			(pressed: boolean) => {
-				handler(pressed);
-			},
-			{}
-		);
-
-		return () => {
-			unobserveRef.current?.();
-			unobserveRef.current = undefined;
-		};
-	}, [keyOrCode, handler]);
-
-	return () => {
-		unobserveRef.current?.();
-		unobserveRef.current = undefined;
 	};
 }
