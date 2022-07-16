@@ -25,10 +25,11 @@ export type {MutationOptions} from './dom/mutation.js';
 
 // run-with
 
-export * from './run-with/if-fn';
-export * from './run-with/noop';
-export * from './run-with/sleep';
-export * from './run-with/interval';
-export * from './run-with/timeout';
-export * from './run-with/raf';
-export * from './run-with/pipe';
+export * from './run-with/debounce.js';
+export * from './run-with/if-fn.js';
+export * from './run-with/interval.js';
+export * from './run-with/noop.js';
+export * from './run-with/pipe.js';
+export * from './run-with/raf.js';
+export * from './run-with/sleep.js';
+export * from './run-with/timeout.js';

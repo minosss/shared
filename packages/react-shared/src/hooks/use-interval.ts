@@ -1,8 +1,8 @@
 import {useMemo} from 'react';
 import type {DependencyList} from 'react';
 import {runInterval} from '@yme/shared';
-import {useCallbackRef} from './use-callback-ref';
-import {useControls} from './use-controls';
+import {useCallbackRef} from './use-callback-ref.js';
+import {useControls} from './use-controls.js';
 
 export interface UseIntervalOptions {
 	immediate?: boolean;

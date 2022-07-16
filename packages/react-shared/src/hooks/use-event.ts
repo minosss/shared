@@ -3,12 +3,12 @@ import type {Fn} from '@yme/shared';
 import {useEffect} from 'react';
 import {useCallbackRef} from './use-callback-ref.js';
 
-export type EventOptions = boolean | AddEventListenerOptions;
+export type UseEventOptions = boolean | AddEventListenerOptions;
 
 export function useEvent<EventType extends keyof WindowEventMap>(
 	event: EventType,
 	callback: (event: WindowEventMap[EventType]) => void,
-	options?: EventOptions
+	options?: UseEventOptions
 ): Fn;
 export function useEvent<EventType extends keyof WindowEventMap>(
 	target: Window,
@@ -19,19 +19,19 @@ export function useEvent<EventType extends keyof DocumentEventMap>(
 	target: Document,
 	event: EventType,
 	callback: (event: DocumentEventMap[EventType]) => void,
-	options?: EventOptions
+	options?: UseEventOptions
 ): Fn;
 export function useEvent<EventType = Event>(
 	target: EventTarget | (() => EventTarget),
 	event: EventType,
 	callback: (event: EventType) => void,
-	options?: EventOptions
+	options?: UseEventOptions
 ): Fn;
 export function useEvent(...args: any[]) {
 	let target: EventTarget | (() => EventTarget);
 	let event: string;
 	let callback: any;
-	let options: EventOptions;
+	let options: UseEventOptions;
 
 	if (isString(args[0])) {
 		[event, callback, options] = args;

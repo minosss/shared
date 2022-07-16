@@ -1,12 +1,12 @@
 import {clamp} from '@yme/shared';
 import {useMemo, useRef, useState} from 'react';
 
-export interface CounterOptions {
+export interface UseCounterOptions {
 	min?: number;
 	max?: number;
 }
 
-export function useCounter(defaultValue = 0, options: CounterOptions = {}) {
+export function useCounter(defaultValue = 0, options: UseCounterOptions = {}) {
 	const {min = Number.NEGATIVE_INFINITY, max = Number.POSITIVE_INFINITY} = options;
 	const defaultValueRef = useRef(defaultValue);
 	const [state, setState] = useState(defaultValue);
