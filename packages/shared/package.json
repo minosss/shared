@@ -12,7 +12,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsc"
+		"build": "rimraf dist && tsc"
 	},
 	"devDependencies": {
 		"@types/node": "^18.0.0",

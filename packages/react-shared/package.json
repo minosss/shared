@@ -12,7 +12,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsc"
+		"build": "rimraf dist && tsc"
 	},
 	"dependencies": {
 		"@yme/shared": "workspace:*"

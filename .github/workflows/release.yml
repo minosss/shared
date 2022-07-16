@@ -1,4 +1,4 @@
-name: CD
+name: Release
 
 on:
   push:
@@ -11,26 +11,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
         with:
-          version: 7
+          fetch-depth: 0
 
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://registry.npmjs.org/
-
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
 
       - run: npx changelogithub
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-      - run: pnpm run publish:ci
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
