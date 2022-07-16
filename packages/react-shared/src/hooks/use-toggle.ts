@@ -3,7 +3,7 @@ import {useMemo, useState} from 'react';
 export function useToggle(defaultValue?: boolean | (() => boolean)) {
 	const [state, setState] = useState(defaultValue);
 
-	const actions = useMemo(
+	const controls = useMemo(
 		() => ({
 			on: () => setState(true),
 			off: () => setState(false),
@@ -12,5 +12,5 @@ export function useToggle(defaultValue?: boolean | (() => boolean)) {
 		[]
 	);
 
-	return [state, actions] as const;
+	return [state, controls] as const;
 }
