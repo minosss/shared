@@ -4,6 +4,7 @@ export * from './is.js';
 export * from './uuid.js';
 export * from './array.js';
 export * from './internal.js';
+export * from './time.js';
 export * from './types';
 
 // dom
