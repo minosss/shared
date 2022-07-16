@@ -4,8 +4,8 @@
 
 collection of utilities, make it simple.
 
-- `@yme/react-shared`
-- `@yme/shared`
+- `@yme/react-shared` ![npm](https://img.shields.io/npm/dm/@yme/react-shared?color=5755d9&label=)
+- `@yme/shared` ![npm](https://img.shields.io/npm/dm/@yme/shared?color=5755d9&label=)
 
 ## Thanks
 
