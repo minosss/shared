@@ -1,7 +1,7 @@
 {
 	"name": "@yme/shared",
 	"description": "collection of utilities",
-	"version": "0.4.2",
+	"version": "0.4.3",
 	"type": "module",
 	"author": "mino",
 	"repository": "minosss/shared",
