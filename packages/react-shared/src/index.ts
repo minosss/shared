@@ -1,6 +1,7 @@
 export * from './hooks/use-callback-ref.js';
 export * from './hooks/use-controllable.js';
 export * from './hooks/use-event.js';
+export * from './hooks/use-keyboard.js';
 export * from './hooks/use-online.js';
 export * from './hooks/use-portal.js';
 export * from './hooks/use-resize.js';
