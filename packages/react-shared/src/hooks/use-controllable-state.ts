@@ -2,20 +2,14 @@ import {runIfFn} from '@yme/shared';
 import React, {useCallback, useState} from 'react';
 import {useCallbackRef} from './use-callback-ref.js';
 
-export function useControllableProp<T>(prop: T | undefined, state: T) {
-	const isControlled = prop !== undefined;
-	const value = isControlled && typeof prop !== 'undefined' ? prop : state;
-	return [isControlled, value] as const;
-}
-
-export interface ControllableStateOptions<T> {
+export interface UseControllableStateOptions<T> {
 	value?: T;
 	defaultValue?: T | (() => T);
 	onChange?: (value: T) => void;
 	shouldUpdate?: (prev: T, next: T) => boolean;
 }
 
-export function useControllableState<T>(options: ControllableStateOptions<T>) {
+export function useControllableState<T>(options: UseControllableStateOptions<T>) {
 	const {
 		value: valueProp,
 		defaultValue,

@@ -1,5 +1,6 @@
 export * from './hooks/use-callback-ref.js';
-export * from './hooks/use-controllable.js';
+export * from './hooks/use-controllable-prop.js';
+export * from './hooks/use-controllable-state.js';
 export * from './hooks/use-event.js';
 export * from './hooks/use-keyboard.js';
 export * from './hooks/use-online.js';
