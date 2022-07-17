@@ -13,7 +13,7 @@ export function isNumber(value: any): value is number {
 }
 
 export function isNumberString(value: any) {
-	return isString(value) && /^\d+(\.\d+)?$/.test(value);
+	return isString(value) && /^[\d-]\d+(\.\d+)?$/.test(value);
 }
 
 export function isNumberLike(value: any) {
