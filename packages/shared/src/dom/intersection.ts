@@ -26,8 +26,7 @@ export function observe(
 		: [target];
 
 	if (elements.length === 0) {
-		console.warn(`element not found, ${target}`);
-		return;
+		throw new Error(`element not found, ${target}`);
 	}
 
 	const intersectionObserver = new IntersectionObserver(callback, {
