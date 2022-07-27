@@ -2,7 +2,23 @@
 
 **Warning**: This package is native [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
-collection of utilities, make it simple.
+## Why
+
+```
+dependencies
+	dependencies
+		dependencies
+```
+
+I don't like this.
+
+```
+supports multiple versions
+```
+
+And, this
+
+collect some utilities that I use. Thanks chakra-ui, vueuse
 
 - `@yme/react-shared` [![npm](https://img.shields.io/npm/v/@yme/react-shared?color=5755d9&label=)](https://www.npmjs.com/package/@yme/react-shared)
 - `@yme/shared` [![npm](https://img.shields.io/npm/v/@yme/shared?color=5755d9&label=)](https://www.npmjs.com/package/@yme/shared)
