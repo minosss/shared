@@ -12,7 +12,9 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "rimraf dist && tsc"
+		"build": "tsup src/index.ts --format=esm --dts",
+		"clean": "rimraf dist",
+		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
 		"@types/node": "^18.0.0",

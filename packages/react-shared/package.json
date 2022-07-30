@@ -12,7 +12,9 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "rimraf dist && tsc"
+		"build": "tsup src/index.ts --format=esm --dts",
+		"clean": "rimraf dist",
+		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@yme/shared": "workspace:*"
