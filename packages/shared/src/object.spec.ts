@@ -1,3 +1,4 @@
+import {expect, describe, it} from 'vitest';
 import {get, omit, pick} from './object.js';
 
 describe('object', () => {

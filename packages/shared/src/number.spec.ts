@@ -1,3 +1,4 @@
+import {expect, describe, it} from 'vitest';
 import {clamp} from './number.js';
 
 describe('number', () => {

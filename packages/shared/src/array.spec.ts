@@ -1,3 +1,4 @@
+import {expect, describe, it} from 'vitest';
 import {chunk, range} from './array.js';
 
 describe('array', () => {
