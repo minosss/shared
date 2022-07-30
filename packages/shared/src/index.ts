@@ -1,27 +1,28 @@
-export * from './counter.js';
-export * from './number.js';
-export * from './is.js';
-export * from './uuid.js';
 export * from './array.js';
+export * from './counter.js';
 export * from './internal.js';
+export * from './is.js';
+export * from './number.js';
+export * from './object.js';
 export * from './time.js';
+export * from './uuid.js';
 export * from './types';
 
 // dom
 
 export * from './dom/index.js';
 
-export {observe as observeKeyboard} from './dom/keyboard.js';
-export type {KeyboardOptions} from './dom/keyboard.js';
-
-export {observe as observeResize} from './dom/resize.js';
-export type {ResizeOptions} from './dom/resize.js';
-
 export {observe as observeIntersection} from './dom/intersection.js';
 export type {IntersectionOptions} from './dom/intersection.js';
 
+export {observe as observeKeyboard} from './dom/keyboard.js';
+export type {KeyboardOptions} from './dom/keyboard.js';
+
 export {observe as observeMutation} from './dom/mutation.js';
 export type {MutationOptions} from './dom/mutation.js';
+
+export {observe as observeResize} from './dom/resize.js';
+export type {ResizeOptions} from './dom/resize.js';
 
 // run-with
 

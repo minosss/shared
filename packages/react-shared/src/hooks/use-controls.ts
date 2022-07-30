@@ -1,4 +1,5 @@
-import {useState, useMemo, useEffect} from 'react';
+import {useState, useMemo} from 'react';
+import {useSafeLayoutEffect} from './use-safe-layout-effect';
 
 export interface Controls {
 	start(): void;
@@ -24,7 +25,7 @@ export function useControls(
 		[source]
 	);
 
-	useEffect(() => {
+	useSafeLayoutEffect(() => {
 		if (immediate) {
 			controls.start();
 		}

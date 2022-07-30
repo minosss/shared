@@ -1,5 +1,4 @@
 import {isFunction} from '@yme/shared';
-import * as React from 'react';
 
 export type ReactRef<T> = React.RefCallback<T> | React.MutableRefObject<T | null>;
 

@@ -1,5 +1,6 @@
 import {timestamp as now} from '@yme/shared';
-import {DependencyList, useEffect, useState} from 'react';
+import {DependencyList, useState} from 'react';
+import {useSafeLayoutEffect} from './use-safe-layout-effect';
 
 export interface UseLastChangedOptions {
 	defaultValue?: number;
@@ -10,7 +11,7 @@ export function useLastChanged(deps: DependencyList, options: UseLastChangedOpti
 	const {timestamp = now, defaultValue} = options;
 	const [ms, setMs] = useState<number | undefined>(defaultValue);
 
-	useEffect(() => {
+	useSafeLayoutEffect(() => {
 		setMs((v) => timestamp(v));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, deps);
