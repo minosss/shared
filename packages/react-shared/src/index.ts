@@ -5,6 +5,7 @@ export * from './hooks/use-controllable-state.js';
 export * from './hooks/use-controls.js';
 export * from './hooks/use-counter.js';
 export * from './hooks/use-event.js';
+export * from './hooks/use-hover.js';
 export * from './hooks/use-interval.js';
 export * from './hooks/use-keyboard.js';
 export * from './hooks/use-last-changed.js';
