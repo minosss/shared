@@ -13,6 +13,7 @@
 	],
 	"scripts": {
 		"build": "tsup src/index.ts --format=esm --dts",
+		"dev": "pnpm build --watch",
 		"clean": "rimraf dist",
 		"typecheck": "tsc --noEmit"
 	},
@@ -22,10 +23,8 @@
 	"devDependencies": {
 		"@types/react": "^18.0.14",
 		"@types/react-dom": "^18.0.5",
-		"@yme/tsconfig": "^0.1.3",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"typescript": "^4.7.4"
+		"react-dom": "^18.2.0"
 	},
 	"engines": {
 		"node": "^14.14.0 || >=16.0.0"
