@@ -1,8 +1,21 @@
+// chakra-ui/react-utils
 import React from 'react';
 
 type CreateContextReturn<T> = [React.Provider<T>, () => T, React.Context<T>];
 
-export function createContext<T>(name: string) {
+interface CreateContextOptions {
+	name: string;
+	strict?: boolean;
+	errorMessage?: string;
+}
+
+export function createContext<T>(options: string | CreateContextOptions) {
+	if (typeof options === 'string') {
+		options = {name: options};
+	}
+
+	const {name, strict = true, errorMessage = `${name}: context is undefined`} = options;
+
 	const Context = React.createContext<T | undefined>(undefined);
 
 	Context.displayName = name;
@@ -10,8 +23,11 @@ export function createContext<T>(name: string) {
 	function useContext() {
 		const context = React.useContext(Context);
 
-		if (!context) {
-			throw new Error(`context ${name} is undefined`);
+		if (!context && strict) {
+			const error = new Error(errorMessage);
+			error.name = 'ContextError';
+			Error.captureStackTrace?.(error, useContext);
+			throw error;
 		}
 
 		return context;
