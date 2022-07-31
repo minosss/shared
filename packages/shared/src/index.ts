@@ -27,6 +27,7 @@ export type {ResizeOptions} from './dom/resize.js';
 // run-with
 
 export * from './run-with/debounce.js';
+export * from './run-with/fns.js';
 export * from './run-with/if-fn.js';
 export * from './run-with/interval.js';
 export * from './run-with/noop.js';

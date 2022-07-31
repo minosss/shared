@@ -14,3 +14,8 @@ export interface Rect {
 	width: number;
 	height: number;
 }
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type FunctionArguments<T extends Function> = T extends (...args: infer R) => any
+	? R
+	: never;
