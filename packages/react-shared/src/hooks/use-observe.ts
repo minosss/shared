@@ -2,6 +2,7 @@ import {useCallback, useEffect, useRef} from 'react';
 
 type Unobserve = () => any;
 
+// ensure the observe function will not update on every renders
 export function useObserve(observe: () => Unobserve): Unobserve {
 	const unobserve = useRef<Unobserve>();
 	const wrapper = useCallback(() => {
