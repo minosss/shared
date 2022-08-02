@@ -1,9 +1,12 @@
-import {isString, runIfFn} from '@yme/shared';
+import {isObject, isString} from '@yme/shared';
 import type {Fn} from '@yme/shared';
 import {useEffect} from 'react';
+import {MaybeComputedRef} from '../types.js';
+import {unref} from '../utils/refs.js';
+import {warnOnce} from '../utils/warn.js';
 import {useCallbackRef} from './use-callback-ref.js';
 
-export type UseEventOptions = boolean | AddEventListenerOptions;
+export type UseEventOptions = boolean | (AddEventListenerOptions & {strict?: boolean});
 
 export function useEvent<EventType extends keyof WindowEventMap>(
 	event: EventType,
@@ -27,8 +30,14 @@ export function useEvent<EventType = Event>(
 	callback: (event: EventType) => void,
 	options?: UseEventOptions
 ): Fn;
+export function useEvent<EventType = Event>(
+	target: MaybeComputedRef<EventTarget>,
+	event: EventType,
+	callback: (event: EventType) => void,
+	options?: UseEventOptions
+): Fn;
 export function useEvent(...args: any[]) {
-	let target: EventTarget | (() => EventTarget);
+	let target: MaybeComputedRef<EventTarget>;
 	let event: string;
 	let callback: any;
 	let options: UseEventOptions;
@@ -43,7 +52,13 @@ export function useEvent(...args: any[]) {
 	const handler = useCallbackRef(callback);
 
 	useEffect(() => {
-		const el = runIfFn(target) ?? globalThis.window;
+		// dont add event listener if target is null and strict is true
+		const strict = isStrict(options);
+		const el = unref(target) ?? strict ? null : globalThis.window;
+
+		if (!el) {
+			warnOnce('use-event', `element is empty, ${event} won't works`);
+		}
 
 		el?.addEventListener(event, handler, options);
 
@@ -53,7 +68,12 @@ export function useEvent(...args: any[]) {
 	}, [event, handler, options, target]);
 
 	return () => {
-		const el = runIfFn(target) ?? globalThis.window;
+		const strict = isStrict(options);
+		const el = unref(target) ?? strict ? null : globalThis.window;
 		el?.removeEventListener(event, handler, options);
 	};
+}
+
+function isStrict(options: UseEventOptions) {
+	return isObject(options) && (options as any).strict === true;
 }
