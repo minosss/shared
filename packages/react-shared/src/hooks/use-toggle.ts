@@ -7,7 +7,7 @@ export function useToggle(defaultValue?: boolean | (() => boolean)) {
 		() => ({
 			on: () => setState(true),
 			off: () => setState(false),
-			toggle: () => setState((v) => !v),
+			toggle: (val?: boolean) => setState((v) => val ?? !v),
 		}),
 		[]
 	);
