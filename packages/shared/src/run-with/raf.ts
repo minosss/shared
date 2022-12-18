@@ -4,12 +4,18 @@ export function runRaf(fn: AnyFn) {
 	let running = false;
 	function start() {
 		running = true;
-		window.requestAnimationFrame(() => {
+
+		async function run() {
 			if (!running) return;
 
-			fn();
-			start();
-		});
+			// wait function is done;
+			await fn();
+
+			// next frame
+			window.requestAnimationFrame(run);
+		}
+
+		run();
 	}
 
 	function stop() {
