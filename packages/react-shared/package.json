@@ -1,7 +1,7 @@
 {
 	"name": "@yme/react-shared",
 	"description": "collection of utilities for react",
-	"version": "0.5.1",
+	"version": "0.6.0",
 	"type": "module",
 	"author": "mino",
 	"repository": "minosss/shared",
