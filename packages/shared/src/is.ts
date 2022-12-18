@@ -56,6 +56,11 @@ export function isUndefined(value: any): value is undefined {
 	return toString.call(value) === '[object Undefined]';
 }
 
+// undefined or null
+export function isNil(value: any): value is null {
+	return value == null;
+}
+
 export function isDefined(value: any) {
 	return !isUndefined(value);
 }
