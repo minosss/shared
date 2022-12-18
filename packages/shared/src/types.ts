@@ -19,3 +19,5 @@ export interface Rect {
 export type FunctionArguments<T extends Function> = T extends (...args: infer R) => any
 	? R
 	: never;
+
+export type ValueOf<T, K extends keyof T = keyof T> = T[K];
