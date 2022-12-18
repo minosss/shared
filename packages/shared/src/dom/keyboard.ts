@@ -26,7 +26,7 @@ export interface KeyboardOptions {
  */
 export function observe(
 	keyCode: string | string[],
-	callback: (value: boolean) => void,
+	callback: (value: boolean, pressed?: string[]) => void,
 	options: KeyboardOptions = {}
 ) {
 	const {
@@ -49,7 +49,7 @@ export function observe(
 
 		if (isMatchingKey(keyCodes, pressed, false)) {
 			event.preventDefault();
-			callback(true);
+			callback(true, [...pressed]);
 		}
 		return;
 	};
@@ -61,7 +61,7 @@ export function observe(
 
 		if (isMatchingKey(keyCodes, pressed, true)) {
 			pressed.clear();
-			callback(false);
+			callback(false, [...pressed]);
 		} else {
 			pressed.delete(event[KeyOrCode]);
 		}
