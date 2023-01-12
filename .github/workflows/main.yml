@@ -18,12 +18,14 @@ jobs:
           - macos-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@master
+      - uses: pnpm/action-setup@v2
         with:
           version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: pnpm install --no-frozen-lockfile
-      - run: npm run build
-      - run: npm run test
+          cache: 'pnpm'
+
+      - run: pnpm install
+      - run: pnpm run build
+      - run: pnpm run test
