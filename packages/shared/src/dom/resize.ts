@@ -1,4 +1,4 @@
-import {isString} from '../is.js';
+import {isString} from '../is/is.js';
 import type {Rect} from '../types.js';
 
 export interface ResizeOptions extends ResizeObserverOptions {

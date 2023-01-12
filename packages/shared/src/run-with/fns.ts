@@ -14,8 +14,6 @@ export function runEventHandlers<T extends (event: any) => void>(...fns: (T | un
 // run functions with the same arguments
 export function runFunctions<T extends AnyFn>(...fns: (T | undefined)[]) {
 	return function mergedFn(this: any, ...args: any[]) {
-		for (const fn of fns) {
-			fn?.apply(this, args);
-		}
+		fns.some((fn) => fn?.apply(this, args) === false);
 	};
 }

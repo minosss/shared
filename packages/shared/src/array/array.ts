@@ -1,5 +1,5 @@
-import {isArray} from './is.js';
-import {runIfFn} from './run-with/if-fn.js';
+import {isArray} from '../is/is.js';
+import {runIfFn} from '../run-with/if-fn.js';
 
 /**
  * 生成范围数字数组

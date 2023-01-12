@@ -1,4 +1,4 @@
-import {isString} from '../is.js';
+import {isString} from '../is/is.js';
 
 export interface MutationOptions extends MutationObserverInit {}
 

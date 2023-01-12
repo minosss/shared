@@ -1,11 +1,11 @@
-export * from './array.js';
-export * from './counter.js';
-export * from './internal.js';
-export * from './is.js';
-export * from './number.js';
-export * from './object.js';
-export * from './time.js';
-export * from './uuid.js';
+export * from './array/array.js';
+export * from './counter/counter.js';
+export * from './internal/internal.js';
+export * from './is/is.js';
+export * from './number/number.js';
+export * from './object/object.js';
+export * from './time/time.js';
+export * from './uuid/uuid.js';
 export * from './types';
 
 // dom

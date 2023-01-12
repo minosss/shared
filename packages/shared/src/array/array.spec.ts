@@ -1,4 +1,4 @@
-import {expect, describe, it} from 'vitest';
+import {describe, it, expect} from 'vitest';
 import {chunk, range} from './array.js';
 
 describe('array', () => {

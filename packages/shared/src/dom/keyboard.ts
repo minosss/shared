@@ -1,4 +1,4 @@
-import {isArray} from '../is.js';
+import {isArray} from '../is/is.js';
 
 export interface KeyboardOptions {
 	target?: Window | Document | HTMLElement;

@@ -1,4 +1,4 @@
-import {expect, describe, it} from 'vitest';
+import {describe, it, expect} from 'vitest';
 import {getInternal, setInternal} from './internal.js';
 
 describe('internal', () => {

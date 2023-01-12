@@ -1,4 +1,4 @@
-import {isArray, isString} from '../is.js';
+import {isArray, isString} from '../is/is.js';
 
 export interface IntersectionOptions extends IntersectionObserverInit {}
 

@@ -12,17 +12,16 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup src/index.ts --format=esm --dts",
-		"dev": "pnpm build --watch",
-		"clean": "rimraf dist",
+		"build": "tsup src --dts",
+		"build:fast": "tsup src",
+		"dev": "pnpm build:fast -- --watch",
+		"clean": "rimraf dist .turbo",
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@yme/shared": "workspace:*"
 	},
 	"devDependencies": {
-		"@types/react": "^18.0.14",
-		"@types/react-dom": "^18.0.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
@@ -33,7 +32,14 @@
 		"access": "public"
 	},
 	"peerDependencies": {
-		"react": "*",
-		"react-dom": "*"
+		"react": "^18",
+		"react-dom": "^18"
+	},
+	"tsup": {
+		"clean": true,
+		"target": "es2020",
+		"format": [
+			"esm"
+		]
 	}
 }

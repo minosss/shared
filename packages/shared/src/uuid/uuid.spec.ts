@@ -1,4 +1,4 @@
-import {expect, describe, it} from 'vitest';
+import {describe, it, expect} from 'vitest';
 import {uuid} from './uuid.js';
 
 describe('uuid', () => {
